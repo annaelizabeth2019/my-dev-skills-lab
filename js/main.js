@@ -1,9 +1,12 @@
 
-$('button').on('click', function(){
-    var addItem = $('input').val();
-    $('ul').append('<li>' + addItem + '</li>');
+$('button').on('click', function() {
+    $('ul').append('<li>' + $('input').val() + '</li>');
 });
 
-const removeItem = $('li').on('click', function(){
-    $(this).fadeOut('1500')
+$('ul').on('click', 'li', function(){
+    $(this).closest('li').fadeOut() 
+});
+
+$('button').on('click', function(){
+    $('input').val('').delay(800)
 });
